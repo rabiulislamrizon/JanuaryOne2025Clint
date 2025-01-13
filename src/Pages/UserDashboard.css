@@ -1,0 +1,44 @@
+.canva-image img{
+    width: 300px;
+}
+.items{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Three columns, each taking an equal fraction of the available space */
+    gap: 10px; /* Gap between grid items */
+}
+
+.single-card {
+    margin: 20px;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    background-color: #FFFFFF; /* Set background to white for contrast */
+    border: 2px solid #6F00FF; /* Add a border with your specified color */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition for hover effects */
+}
+
+.single-card:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: rgba(100, 100, 111, 0.4) 0px 14px 28px 0px; /* Enhanced shadow on hover */
+}
+
+.single-card h2, .single-card p {
+    color: #6F00FF; /* Change text color to match the card's theme */
+}
+
+.single-card h2 {
+    font-size: 1.5em; /* Increase font size for the heading */
+    margin-bottom: 10px; /* Add space below heading */
+}
+
+.single-card p {
+    font-size: 1em; /* Standard text size */
+    line-height: 1.5; /* Improve readability */
+}
+
+.user-cards{
+   display: flex;
+   padding: 60px;
+   
+   
+}

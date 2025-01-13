@@ -1,0 +1,40 @@
+.icon-img{
+    display: flex;
+    justify-content: center;
+}
+.single-card{
+    width: 150px;
+}
+
+.single-card p{
+    display: flex;
+    justify-content: center;
+}
+
+.single-card {
+    flex: 0 1 100%; /* Default to full width for small devices */
+}
+
+@media (min-width: 576px) {
+    .single-card {
+        flex: 0 1 calc(50% - 20px); /* 2 columns */
+    }
+}
+
+@media (min-width: 768px) {
+    .single-card {
+        flex: 0 1 calc(33.333% - 20px); /* 3 columns */
+    }
+}
+
+@media (min-width: 992px) {
+    .single-card {
+        flex: 0 1 calc(25% - 20px); /* 4 columns if needed */
+    }
+}
+
+@media (min-width: 1200px) {
+    .single-card {
+        flex: 0 1 calc(20% - 20px); /* 5 columns if needed */
+    }
+}
