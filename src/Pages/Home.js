@@ -7,7 +7,7 @@ import PricingSection from "../components/HomePage/PricingSection";
 import ContactUs from "./ContactUs";
 import WorkSection from "../components/HomePage/WorkSection";
 import FAQSection from "../components/HomePage/FAQSection";
-import CallToAction from "../components/HomePage/CallToAction";
+
 
 
 

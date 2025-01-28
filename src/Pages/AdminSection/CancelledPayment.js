@@ -3,6 +3,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { useNavigate, useParams } from "react-router-dom";
 import auth from "../../firebase.init";
 import Loading from "../../components/Shared/Loading";
+import HeaderBottom from "../../components/HomePage/HeaderBottom";
 
 const CancelledPayment = () => {
   const { id } = useParams();
@@ -40,30 +41,33 @@ const CancelledPayment = () => {
   }, [id, navigate]);
 
   return (
-    <div className="d-flex justify-content-center align-items-center vh-100 bg-light">
-      {loading ? (
-        <Loading />
-      ) : (
-        <div className="text-center bg-white p-5 shadow rounded">
-          <div className="mb-3">
-            <i className="bi bi-x-circle-fill text-danger" style={{ fontSize: "3rem" }}></i>
-          </div>
-          <h3 className="text-danger mb-3">Payment Cancelled</h3>
-          <p className="text-muted">
-            Your payment process has been cancelled. You can go back to the dashboard or retry the payment.
-          </p>
-          <div className="mt-4">
-            <button
-              className="btn btn-primary me-3"
-              onClick={() => navigate("/dashboard")}
-            >
-              Back to Dashboard
-            </button>
-            
-          </div>
-        </div>
-      )}
+  <> 
+  <HeaderBottom></HeaderBottom>
+  
+   <div className="d-flex justify-content-center align-items-center vh-100 bg-light">
+  {loading ? (
+    <Loading />
+  ) : (
+    <div className="text-center bg-white p-5 shadow rounded">
+      <div className="mb-3">
+        <i className="bi bi-x-circle-fill text-danger" style={{ fontSize: "3rem" }}></i>
+      </div>
+      <h3 className="text-danger mb-3">Payment Cancelled</h3>
+      <p className="text-muted">
+        Your payment process has been cancelled. You can go back to the dashboard or retry the payment.
+      </p>
+      <div className="mt-4">
+        <button
+          className="btn btn-primary me-3"
+          onClick={() => navigate("/dashboard")}
+        >
+          Back to Dashboard
+        </button>
+        
+      </div>
     </div>
+  )}
+</div></>
   );
 };
 

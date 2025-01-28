@@ -133,6 +133,16 @@ import RequireAuthPendingOrder from './Pages/RequireAuthPendingOrder';
 import RegisterGeneral from './Pages/RegisterGeneral';
 import LineChart from './Pages/AdminSection/LineChart';
 import OrderChart from './Pages/AdminSection/OrderChart';
+import Blog from './Pages/Blog';
+import AddPost from './Pages/AddPost';
+import AllPosts from './Pages/AllPosts';
+import BlogPostDetails from './Pages/BlogPostDetails';
+import EditPost from './Pages/EditPost';
+import AddCategory from './Pages/AdminSection/AddCategory';
+import EditCategory from './Pages/AdminSection/EditCategory';
+import Category from './Pages/AdminSection/Category';
+import AuthorManagementPost from './Pages/AdminSection/AuthorManagementPost';
+import EditAuthor from './Pages/AdminSection/EditAuthor';
 
 
 
@@ -150,6 +160,17 @@ function App() {
       <Routes>
 
         <Route path='/thanks' element={<ThanksPage></ThanksPage>}></Route>
+        <Route path='/blog' element={<Blog></Blog>}></Route>
+        <Route path='/add-post' element={<AddPost></AddPost>}></Route>
+        <Route path='/add-author' element={<AuthorManagementPost></AuthorManagementPost>}></Route>
+        <Route path='/author/:id' element={<EditAuthor></EditAuthor>}></Route>
+        <Route path='/admin/add-category' element={<AddCategory></AddCategory>}></Route>
+        <Route path='/admin/category' element={<Category></Category>}></Route>
+        <Route path='/add-author' element={<AuthorManagementPost></AuthorManagementPost>}></Route>
+        <Route path='/edit-category/:categorySlug' element={<EditCategory></EditCategory>}></Route>
+        <Route path='/all-post' element={<AllPosts></AllPosts>}></Route>
+        <Route path='/blog/:titleSlug' element={<BlogPostDetails></BlogPostDetails>}></Route>
+        <Route path='/edit-post/:titleSlug' element={<EditPost></EditPost>}></Route>
         <Route path='/thanks-for-submit' element={<AuditThanks></AuditThanks>}></Route>
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/real-estate-database' element={<RealEstateDatabse></RealEstateDatabse>}></Route>

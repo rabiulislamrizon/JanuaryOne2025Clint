@@ -38,7 +38,6 @@ const PendingOrder = () => {
                         <UserDashboardMenu></UserDashboardMenu>
                         <div>
                             <h2>Your Pending Orders</h2>
-
                             {/* Responsive Table */}
                             <div className="table-responsive">
                                 <table className="table">
@@ -73,7 +72,6 @@ const PendingOrder = () => {
                                     </tbody>
                                 </table>
                             </div>
-
                             {/* Bootstrap Pagination for Orders */}
                             <nav aria-label="Orders Page Navigation">
                                 <ul className="pagination">

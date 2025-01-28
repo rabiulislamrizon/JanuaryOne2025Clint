@@ -58,7 +58,7 @@ const TotalOrders = () => {
 
             <MargingTop></MargingTop>
 
-            <section id="services" className="services-area vh-100 mb-150 ">
+            <section id="services" className="services-area  mb-150 ">
 
                 <div className="container">
                     <div className="row mb-4">
@@ -155,7 +155,9 @@ const TotalOrders = () => {
                         </div>
                     </div>
                 </div>
+                <MargingTop></MargingTop>
             </section>
+
             <MargingTop></MargingTop>
         </>
     );

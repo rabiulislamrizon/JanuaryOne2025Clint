@@ -11,6 +11,7 @@ import axios from "axios";
 import Loading from "../components/Shared/Loading";
 import HeaderBottom from "../components/HomePage/HeaderBottom";
 import auth from "../firebase.init";
+import MargingTop from "../components/HomePage/MargingTop";
 
 const SignUp = () => {
   const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
@@ -113,6 +114,7 @@ const SignUp = () => {
   return (
     <>
       <HeaderBottom />
+      <MargingTop></MargingTop>
       <div
         className="main-content payment-setting  "
        

@@ -84,7 +84,7 @@ const Login = () => {
                       <p className="text-white mb-5">
                         Please enter your login and password!
                       </p>
-                      <div className="form-outline form-white mb-4">
+                      <div className="form-outline form-white ">
                         <label className="form-label" htmlFor="typeEmailX">
                           Email
                         </label>

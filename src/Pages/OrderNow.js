@@ -151,7 +151,7 @@ const OrderNow = () => {
                                         type="text"
                                         className="form-control"
                                         name="customerEmail"
-                                        placeholder="example@gmail.com"
+                                        placeholder="your@gmail.com"
                                         required
                                     />
                                 </div>

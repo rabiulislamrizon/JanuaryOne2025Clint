@@ -38,10 +38,9 @@ const AboutSection = () => {
                 <div className="grid grid-cols-1 items-center gap-12 md:grid-cols-2 lg:gap-20 xl:grid-cols-[minmax(0,_.8fr)_1fr] xl:gap-28 xxl:gap-[134px]">
                   {/* Content Left Block */}
                   <div className="jos order-2 mt-16 rounded-md md:order-1 md:mt-0" >
-                    <div className="relative h-[494px] rounded-tl-[20px] rounded-tr-[20px] bg-[url('https://i.ibb.co/CBSxWgm/content-shape.png')] bg-cover bg-no-repeat">
+                    <div className=" relative h-[494px] rounded-tl-[20px] rounded-tr-[20px] bg-[url('https://i.ibb.co/CBSxWgm/content-shape.png')] bg-cover bg-no-repeat">
                       <img src={a.aboutImgOne} alt="th2-content-img-1.png" />
                     </div>
-
                   </div>
                   {/* Content Left Block */}
                   {/* Content Right Block */}

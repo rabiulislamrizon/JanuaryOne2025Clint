@@ -106,7 +106,7 @@ const ContactUs = () => {
                     name="name"
                     id="contact-name"
                     placeholder="John Doe"
-                    className="rounded-[10px] border border-gray-300 bg-white px-6 py-[18px] font-bold text-black outline-none transition-all placeholder:text-slate-500 focus:border-colorOrangyRed"
+                    className="rounded-[10px] border border-gray-300 bg-white px-6 py-[18px]  text-black outline-none transition-all placeholder:text-slate-500 focus:border-colorOrangyRed"
                     required="required"
                   />
                 </div>
@@ -124,7 +124,7 @@ const ContactUs = () => {
                     name="email"
                     id="contact-email"
                     placeholder="example@gmail.com"
-                    className="rounded-[10px] border border-gray-300 bg-white px-6 py-[18px] font-bold text-black outline-none transition-all placeholder:text-slate-500 focus:border-colorOrangyRed"
+                    className="rounded-[10px] border border-gray-300 bg-white px-6 py-[18px]   outline-none transition-all placeholder:text-slate-500 focus:border-colorOrangyRed"
                     required="required"
                   />
                 </div>
@@ -146,7 +146,7 @@ const ContactUs = () => {
                     name="number"
                     id="contact-phone"
                     placeholder="(123) 456 - 7890"
-                    className="rounded-[10px] border border-gray-300 bg-white px-6 py-[18px] font-bold text-black outline-none transition-all placeholder:text-slate-500 focus:border-colorOrangyRed"
+                    className="rounded-[10px] border border-gray-300 bg-white px-6 py-[18px]  text-black outline-none transition-all placeholder:text-slate-500 focus:border-colorOrangyRed"
                     required="required"
                   />
                 </div>
@@ -163,8 +163,8 @@ const ContactUs = () => {
                     type="text"
                     name="subject"
                     id="contact-company"
-                    placeholder="Subject"
-                    className="rounded-[10px] border border-gray-300 bg-white px-6 py-[18px] font-bold text-black outline-none transition-all placeholder:text-slate-500 focus:border-colorOrangyRed"
+                    placeholder="Your Subject"
+                    className="rounded-[10px] border border-gray-300 bg-white px-6 py-[18px]  text-black outline-none transition-all placeholder:text-slate-500 focus:border-colorOrangyRed"
                     required="required"
                   />
                 </div>
@@ -193,7 +193,7 @@ const ContactUs = () => {
                   <textarea
                     name="message"
                     id="contact-message"
-                    className="min-h-[180px] rounded-[10px] border border-gray-300 bg-white px-6 py-[18px] font-bold text-black outline-none transition-all placeholder:text-slate-500 focus:border-colorOrangyRed"
+                    className="min-h-[180px] rounded-[10px] border border-gray-300 bg-white px-6 py-[18px]  text-black outline-none transition-all placeholder:text-slate-500 focus:border-colorOrangyRed"
                     placeholder="Write your message here..."
                     required="required"
                     defaultValue={""}

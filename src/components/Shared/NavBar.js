@@ -117,6 +117,9 @@ const NavBar = () => {
                   <a href="#pricing-sec" className="nav-link-item">Pricing</a>
                 </li>
                 <li className="nav-item">
+                  <a href="/blog" className="nav-link-item">Blog</a>
+                </li>
+                <li className="nav-item">
                   <a href="#contact-sec" className="nav-link-item">Contact</a>
                 </li>
               </ul>

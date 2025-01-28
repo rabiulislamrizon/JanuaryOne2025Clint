@@ -4,6 +4,14 @@ const FAQSection = () => {
   const [items, setItems] = useState([]);
   const [activeIndex, setActiveIndex] = useState(null);
 
+  const [faq, setFAQsection] = useState([]);
+
+  useEffect(() => {
+    fetch(`http://localhost:5000/faq`)
+      .then((res) => res.json())
+      .then((info) => setFAQsection(info));
+  }, []);
+
   // Fetch FAQ items data
   useEffect(() => {
     fetch(`http://localhost:5000/faq-items`)
@@ -23,20 +31,23 @@ const FAQSection = () => {
         {/* Section Container */}
         <div className="global-container">
           {/* Section Content Block */}
-          <div className="jos mx-auto mb-10 text-center md:mb-16 md:max-w-xl lg:mb-20 lg:max-w-3xl xl:max-w-[856px]">
-            <h2 className="font-clashDisplay text-4xl font-medium leading-[1.06] sm:text-[44px] lg:text-[56px] xl:text-[75px]">
-              AI Chatbot FAQs for more information
-            </h2>
-          </div>
+          {
+            faq.map(b => <div className="jos mx-auto mb-10 text-center md:mb-16 md:max-w-xl lg:mb-20 lg:max-w-3xl xl:max-w-[856px]">
+              <h2 className="font-clashDisplay text-4xl font-medium leading-[1.06] sm:text-[44px] lg:text-[56px] xl:text-[75px]">
+                {b.faqHeading}
+              </h2>
+            </div>)
+
+          }
+
           {/* Section Content Block */}
           {/* Accordion */}
           <ul className="accordion flex flex-col gap-y-6">
             {items.map((item, index) => (
               <li
                 key={index}
-                className={`jos accordion-item rounded-[10px] border-[1px] border-[#EAEDF0] bg-white px-7 py-[30px] ${
-                  activeIndex === index ? 'active' : 'active'
-                }`}
+                className={`jos accordion-item rounded-[10px] border-[1px] border-[#EAEDF0] bg-white px-7 py-[30px] ${activeIndex === index ? 'active' : 'active'
+                  }`}
               >
                 <div
                   className="accordion-header flex items-center justify-between cursor-pointer"

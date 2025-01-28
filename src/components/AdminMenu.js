@@ -11,7 +11,12 @@ import video from './Images/video-player.png';
 import emailtem from './Images/newsletter.png';
 import graphics from './Images/web-design.png';
 import videotew from './Images/video-tutorials.png';
-import seoreport from './Images/reportSEO.png';
+import addpost from './Images/add-post.png';
+import allpost from './Images/allpost.png';
+import author from './Images/author.png';
+import adcate from './Images/add-category.png';
+import allcate from './Images/all-category.png';
+
 
 import './AdminMenu.css';
 
@@ -29,6 +34,66 @@ const AdminMenu = () => {
 
 <div className='container'>
     <div className='row justify-content-center mt-5 mb-5'>
+        <div className='col-lg-3 col-md-4 col-sm-6 mb-4'>
+            <div className='card text-center shadow-sm'>
+                <Link to='/add-post' className='text-decoration-none'>
+                    <div className='card-body d-flex flex-column align-items-center'>
+                        <div className='icon-img mb-3'>
+                            <img src={addpost} alt="Setting" className='img-fluid' />
+                        </div>
+                        <h5 className='card-title'>Add Post</h5>
+                    </div>
+                </Link>
+            </div>
+        </div>
+        <div className='col-lg-3 col-md-4 col-sm-6 mb-4'>
+            <div className='card text-center shadow-sm'>
+                <Link to='/all-post' className='text-decoration-none'>
+                    <div className='card-body d-flex flex-column align-items-center'>
+                        <div className='icon-img mb-3'>
+                            <img src={allpost} alt="Setting" className='img-fluid' />
+                        </div>
+                        <h5 className='card-title'>All Post</h5>
+                    </div>
+                </Link>
+            </div>
+        </div>
+        <div className='col-lg-3 col-md-4 col-sm-6 mb-4'>
+            <div className='card text-center shadow-sm'>
+                <Link to='/admin/add-category' className='text-decoration-none'>
+                    <div className='card-body d-flex flex-column align-items-center'>
+                        <div className='icon-img mb-3'>
+                            <img src={adcate} alt="Setting" className='img-fluid' />
+                        </div>
+                        <h5 className='card-title'>Add Category</h5>
+                    </div>
+                </Link>
+            </div>
+        </div>
+        <div className='col-lg-3 col-md-4 col-sm-6 mb-4'>
+            <div className='card text-center shadow-sm'>
+                <Link to='/admin/category' className='text-decoration-none'>
+                    <div className='card-body d-flex flex-column align-items-center'>
+                        <div className='icon-img mb-3'>
+                            <img src={allcate} alt="Setting" className='img-fluid' />
+                        </div>
+                        <h5 className='card-title'>All Category</h5>
+                    </div>
+                </Link>
+            </div>
+        </div>
+        <div className='col-lg-3 col-md-4 col-sm-6 mb-4'>
+            <div className='card text-center shadow-sm'>
+                <Link to='/add-author' className='text-decoration-none'>
+                    <div className='card-body d-flex flex-column align-items-center'>
+                        <div className='icon-img mb-3'>
+                            <img src={author} alt="Setting" className='img-fluid' />
+                        </div>
+                        <h5 className='card-title'>Author</h5>
+                    </div>
+                </Link>
+            </div>
+        </div>
         <div className='col-lg-3 col-md-4 col-sm-6 mb-4'>
             <div className='card text-center shadow-sm'>
                 <Link to='/setting' className='text-decoration-none'>

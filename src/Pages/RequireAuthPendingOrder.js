@@ -14,7 +14,7 @@ const RequireAuthPendingOrder = ({ children }) => {
     }
 
     if (!user) {
-        return <Navigate to="/login-general" state={{ from: location }} replace />;
+        return <Navigate to="/register-general" state={{ from: location }} replace />;
     }
 
     return children;
