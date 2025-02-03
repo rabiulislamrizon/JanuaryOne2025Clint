@@ -37,17 +37,17 @@ const UpdateUser = () => {
 
     return (
         <>
-        <HeaderBottom></HeaderBottom>
-            <section id="services" className="services-area vh-100 d-flex align-items-center justify-content-center">
+            <HeaderBottom></HeaderBottom>
+            <section id="services" className=" vh-100 d-flex align-items-center justify-content-center">
                 <div className="container">
                     <div className="row justify-content-center">
-                        <div className="col-lg-6 col-md-8">
+                        <div className="col-lg-8 col-md-12">
                             <h3 className="text-center mb-4">Update User Email</h3>
                             <form className="contact-form" onSubmit={handleUser}>
                                 <div className="form-group mb-3">
                                     <input
                                         type="email"
-                                        className="form-control form-control-lg shadow-lg p-3 mb-3 bg-white rounded"
+                                        className="form-control form-control-lg shadow-lg p-3 mb-3 bg-white rounded text-center"
                                         name="userEmail"
                                         defaultValue={user.userEmail || ''}
                                         placeholder="User Email"

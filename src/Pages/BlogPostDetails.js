@@ -8,6 +8,10 @@ const BlogPostDetails = () => {
     const [blogPost, setBlogPost] = useState(null); // State to store the blog post details
     const [author, setAuthor] = useState([]);
 
+
+
+    const { categorySlug } = useParams();
+
     // Fetch author details
     useEffect(() => {
         fetch("http://localhost:5000/author")
@@ -29,6 +33,18 @@ const BlogPostDetails = () => {
         }
     }, [titleSlug]);
 
+    useEffect(() => {
+        if (categorySlug) {
+            fetch(`http://localhost:5000/blog/${categorySlug}`)
+                .then((res) => res.json())
+                .then((info) => {
+                    console.log("Blog post data:", info); // Log to check the response
+                    setBlogPost(info);
+                })
+                .catch((error) => console.error("Error fetching blog post:", error));
+        }
+    }, [categorySlug]);
+
     // If blogPost is null, show a loading state
     if (!blogPost) {
         return (
@@ -45,7 +61,7 @@ const BlogPostDetails = () => {
         <>
             {/* Dynamic Helmet for SEO */}
             <Helmet>
-                <title>{blogPost.postTitle} | Your Blog</title>
+                <title>{blogPost.authorName} </title>
                 <meta name="description" content={blogPost.description.slice(0, 160)} />
                 <meta name="keywords" content={`Blog, ${blogPost.postCategoryName}, ${blogPost.authorName}`} />
                 <meta property="og:title" content={blogPost.postTitle} />
@@ -96,17 +112,36 @@ const BlogPostDetails = () => {
                                         </div>
                                         {/* Blog Post Meta */}
                                         <ul className="flex flex-wrap gap-4">
-                                            <li className="font-semibold">
+                                            {
+                                                author.map(c => (
+                                                    <li className="font-semibold text-xl" key={c._id}> {/* Add text-xl for larger font */}
+                                                        <span className="me-2">
+                                                            <i className="fas fa-user-circle"></i>
+                                                        </span>
+                                                        <span>By {c.allAuthorName}</span>
+                                                    </li>
+                                                ))
+                                            }
+
+                                            <li className="relative font-semibold text-xl">
                                                 <span className="me-2">
-                                                    <i className="fas fa-user-circle"></i>
+                                                    <i className="fas fa-calendar-alt"></i> {/* Calendar Icon */}
                                                 </span>
-                                                <span>By {blogPost.authorName}</span>
+                                                {blogPost.postDate}
                                             </li>
 
-                                            <li className="relative font-semibold">
-                                                <span>{blogPost.postDate}</span>
+                                            <li className="relative font-semibold text-xl"> {/* Add text-xl for larger font */}
+                                                <span className="me-2">
+                                                    <i className="fas fa-tag"></i> {/* Category Icon */}
+                                                </span>
+
+                                                <Link to={`/category/${blogPost.postCategoryName}`} className="text-primary">
+                                                    {blogPost.postCategoryName}
+                                                </Link>
+
                                             </li>
                                         </ul>
+
 
                                         {/* Blog Post Title */}
                                         <h1 className="mt-4 text-6xl font-bold text-dark">

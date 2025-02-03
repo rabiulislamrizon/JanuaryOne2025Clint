@@ -6,6 +6,27 @@ import MargingTop from "../components/HomePage/MargingTop";
 const Blog = () => {
   const [posts, setPosts] = useState([]);
 
+  const [author, setAuthor] = useState([]);
+
+
+  const [categories, setCategories] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:5000/categorys")
+      .then((res) => res.json())
+      .then((info) => setCategories(info))
+      .catch((error) => console.error("Error fetching author details:", error));
+  }, []);
+
+
+  // Fetch author details
+  useEffect(() => {
+    fetch("http://localhost:5000/author")
+      .then((res) => res.json())
+      .then((info) => setAuthor(info))
+      .catch((error) => console.error("Error fetching author details:", error));
+  }, []);
+
   useEffect(() => {
     // Fetch all posts from the backend
     fetch("http://localhost:5000/posts")
@@ -47,23 +68,37 @@ const Blog = () => {
                   <div className="col" key={post._id}>
                     <div className="card shadow border-light rounded-3 h-100">
                       <div className="card">
-                        <img
-                          src={post.featuredImage}
-                          className="card-img-top rounded-top"
-                          alt="Post Thumbnail"
-                          style={{ width: "400px", height: "200px", objectFit: "" }}
-                        />
+                        <Link to={`/blog/${post.titleSlug}`}>
+                          <img
+                            src={post.featuredImage}
+                            className="card-img-top rounded-top"
+                            alt="Post Thumbnail"
+                            style={{ width: "400px", height: "200px", objectFit: "" }}
+                          />
+                        </Link>
                         <div className="card-body">
                           <p className="card-title">Posted on {post.postDate}</p>
+                          <p className="card-subtitle text-muted mb-2">
+                           
+                          </p>
                         </div>
+
                       </div>
                       <div className="card-body">
-                        <p className="card-subtitle text-muted mb-2">
-                          <span className="me-2">
-                            <i className="fas fa-user-circle"></i> {/* Author icon */}
-                          </span>
-                          by <span className="fw-bold text-dark">{post.authorName}</span>
-                        </p>
+                        {
+                          author.map(a => <p className="card-subtitle text-muted mb-2">
+                            <span className="me-2">
+                              <i className="fas fa-user-circle"></i> {/* Author icon */}
+                            </span>
+                            by <span className="fw-bold text-dark">{a.allAuthorName}</span>
+
+                          </p>)
+                        }
+
+
+
+
+
                         <h4 className="card-title mb-3">
                           <Link to={`/blog/${post.titleSlug}`} className="text-decoration-none text-dark">
                             {post.postTitle}

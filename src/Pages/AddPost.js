@@ -93,7 +93,7 @@ const AddPost = () => {
                                 type="text"
                                 name="authorName"
                                 className="form-control"
-                                placeholder="Author Name"
+                                placeholder="Meta Title"
                             />
                         </div>
 

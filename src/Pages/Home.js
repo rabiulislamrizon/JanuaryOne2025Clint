@@ -25,10 +25,6 @@ const Home = () => {
       <TestimonialSection></TestimonialSection>
       <FAQSection></FAQSection>
       <ContactUs></ContactUs>
-
-
-
-
     </div>
   );
 };

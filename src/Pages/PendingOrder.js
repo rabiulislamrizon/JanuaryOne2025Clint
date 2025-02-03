@@ -31,47 +31,79 @@ const PendingOrder = () => {
     return (
         <>
             <HeaderBottom></HeaderBottom>
+            <MargingTop></MargingTop>
             <section id="services" className="services-area pb-90 fix mb-5 vh-100">
                 <div className="container">
                     <div></div>
                     <div>
-                        <UserDashboardMenu></UserDashboardMenu>
+
                         <div>
                             <h2>Your Pending Orders</h2>
+
                             {/* Responsive Table */}
                             <div className="table-responsive">
-                                <table className="table">
-                                    <thead>
+                                <table className="table table-bordered table-hover shadow-sm">
+                                    <thead className="table-light text-dark">
                                         <tr>
-                                            <th scope="col">Sl No.</th>
-                                            <th scope="col">Date</th>
-                                            <th scope="col">Your Name</th>
+                                            <th scope="col" className="text-center">#</th>
+                                            <th scope="col">Order Date</th>
+                                            <th scope="col">Customer Name</th>
                                             <th scope="col">Amount</th>
                                             <th scope="col">Order Status</th>
                                             <th scope="col">Payment Status</th>
+                                            
                                         </tr>
                                     </thead>
                                     <tbody>
                                         {currentOrders.map((order, index) => (
-                                            <tr key={index}>
-                                                <th scope="row">{index + 1}</th>
+                                            <tr key={order._id}>
+                                                <td className="text-center">{index + 1}</td>
                                                 <td>{order.orderDate}</td>
                                                 <td>{order.customerName}</td>
                                                 <td>${order.packagePrice} USD</td>
-                                                <td>{order.orderStatus}</td>
+                                                <td>
+                                                    <span
+                                                        className={`badge ${order.orderStatus === 'Completed' ? 'bg-success' : 'bg-warning'} p-2`}
+                                                    >
+                                                        {order.orderStatus}
+                                                    </span>
+                                                </td>
                                                 <td>
                                                     {order.paymentStatus === 'UnPaid' && (
-                                                        <Link className='jos button relative z-[1] inline-flex items-center gap-3 rounded-[50px] border-none bg-colorViolet py-[8px] text-white after:bg-colorOrangyRed hover:text-white' to={`/pay-now/${order._id}`}>Pay Now</Link>
+                                                        <Link
+                                                            className="btn btn-outline-warning btn-sm fw-bold rounded-pill"
+                                                            to={`/pay-now/${order._id}`}
+                                                        >
+                                                            <i className="fas fa-credit-card me-1"></i> Pay Now
+                                                        </Link>
                                                     )}
                                                     {order.paymentStatus === 'Paid' && (
-                                                        <Link className='jos button relative z-[1] inline-flex items-center gap-3 rounded-[50px] border-none bg-colorViolet py-[8px] text-white after:bg-colorOrangyRed hover:text-white' to='#'>You Have Paid</Link>
+                                                        <span className="badge bg-success p-2">
+                                                            <i className="fas fa-check-circle me-1"></i> Paid
+                                                        </span>
+                                                    )}
+
+                                                    {order.paymentStatus === 'Cancelled' && (
+                                                        <>
+                                                            <span className="badge bg-danger p-2">
+                                                                <i className="fas fa-times-circle me-1"></i> Cancelled
+                                                            </span>
+                                                            <Link
+                                                                className="btn btn-outline-warning btn-sm fw-bold rounded-pill m-1"
+                                                                to={`/pay-now/${order._id}`}
+                                                            >
+                                                                <i className="fas fa-credit-card me-1"></i> Pay Now 
+                                                            </Link>
+                                                        </>
                                                     )}
                                                 </td>
+
                                             </tr>
                                         ))}
                                     </tbody>
                                 </table>
                             </div>
+
                             {/* Bootstrap Pagination for Orders */}
                             <nav aria-label="Orders Page Navigation">
                                 <ul className="pagination">
@@ -93,7 +125,7 @@ const PendingOrder = () => {
                         </div>
                     </div>
                 </div>
-               <MargingTop></MargingTop>
+                <MargingTop></MargingTop>
             </section>
         </>
     );

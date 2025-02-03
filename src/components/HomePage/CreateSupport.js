@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import auth from '../../firebase.init';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { useNavigate } from 'react-router-dom';  // Import useNavigate
 import HeaderBottom from './HeaderBottom';
 
 const CreateSupport = () => {
     const [user] = useAuthState(auth);
     const [currentDate, setCurrentDate] = useState('');
+    const navigate = useNavigate();  // Initialize navigate
 
     useEffect(() => {
         const date = new Date();
@@ -46,14 +48,14 @@ const CreateSupport = () => {
             .then((res) => res.json())
             .then((result) => {
                 alert('Your Ticket is Submitted');
+                navigate('/support');  // Navigate to /support after submission
             });
     };
 
     return (
         <>
-
-        <HeaderBottom></HeaderBottom>
-          
+            <HeaderBottom></HeaderBottom>
+            
             <div className="container vh-100 d-flex align-items-center justify-content-center">
                 <section id="services" className="services-area w-100">
                     <div className="container py-5">

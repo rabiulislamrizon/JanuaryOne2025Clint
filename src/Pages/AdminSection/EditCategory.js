@@ -5,9 +5,9 @@ import HeaderBottom from '../../components/HomePage/HeaderBottom';
 const EditCategory = () => {
     const [category, setCategory] = useState({
         categoryName: '',
-        categoryTitle: '',
+        
         categoryImage: '',
-        mainCategory: '', // Add mainCategory state for the dropdown
+       
     });
 
     const navigate = useNavigate(); // Initialize the navigate function
@@ -27,9 +27,9 @@ const EditCategory = () => {
 
         const updatedCategory = {
             categoryName: event.target.categoryName.value,
-            categoryTitle: event.target.categoryTitle.value,
+           
             categoryImage: event.target.categoryImage.value,
-            mainCategory: event.target.mainCategory.value, // Include mainCategory value
+           
         };
 
         const url = `http://localhost:5000/update-category/${categorySlug}`;
@@ -69,16 +69,7 @@ const EditCategory = () => {
                                             required
                                         />
                                     </div>
-                                    <div>
-                                        <input
-                                            type="text"
-                                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:outline-none text-black mb-3"
-                                            name="categoryTitle"
-                                            placeholder="Category Title"
-                                            defaultValue={category.categoryTitle}
-                                            required
-                                        />
-                                    </div>
+                                    
                                     <div>
                                         <input
                                             type="text"
@@ -89,20 +80,7 @@ const EditCategory = () => {
                                             required
                                         />
                                     </div>
-                                    <div>
-                                        <select
-                                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:outline-none text-black mb-3"
-                                            name="mainCategory"
-                                            defaultValue={category.mainCategory}
-                                            required
-                                        >
-                                            <option value="" disabled>Select Category</option>
-                                            <option value="category1">Category 1</option>
-                                            <option value="category2">Category 2</option>
-                                            <option value="category3">Category 3</option>
-                                            <option value="category4">Category 4</option>
-                                        </select>
-                                    </div>
+                                   
                                     <div>
                                         <button
                                             className="jos button relative z-[1] inline-flex items-center gap-3 rounded-[50px] border-none bg-colorViolet py-[8px] px-6 text-white after:bg-colorOrangyRed hover:text-white"

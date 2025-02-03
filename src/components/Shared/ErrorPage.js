@@ -20,20 +20,31 @@ const ErrorPage = () => {
 
 
 
-      <section className="error-section centred">
-        <div className="auto-container">
-          <div className="inner-box">
-            <figure className="error-image"><img src="assets/images/icons/error-1.png" alt /></figure>
-            <h2>Oops! That Page Can Not be Found.</h2>
-            <div className="btn-box">
-           
-              <a href="/" className="jos button relative z-[1] inline-flex items-center gap-3 rounded-[50px] border-none bg-colorViolet py-[8px] text-white after:bg-colorOrangyRed hover:text-white">Go to Homepage</a>
-            </div>
-          </div>
+      <main className="main-wrapper relative overflow-hidden">
+  {/*...::: 404 Section Start :::... */}
+  <section id="404-section">
+    {/* Section Spacer */}
+    <div className="py-40 pt-36 xl:pb-[200px] xl:pt-[180px]">
+      {/* Section Container */}
+      <div className="global-container">
+        {/* 404 Content */}
+        <div className="mx-auto max-w-[954px] text-center">
+          <h1 className="bg-[url(../img/th-1/404-text-image.jpg)] bg-contain bg-clip-text bg-center bg-no-repeat text-[150px] text-transparent sm:text-[220px] lg:text-[300px] xl:text-[350px]">
+            404
+          </h1>
+          <h2 className="mb-[50px]">
+            The page you are looking for cannot be found
+          </h2>
+          <a href="/" className="button rounded-[50px] border-2 border-black bg-black py-4 text-white after:bg-colorOrangyRed hover:border-colorOrangyRed hover:text-white">Go to homepage</a>
         </div>
-      </section>
-
-      <HeaderBottom></HeaderBottom>
+        {/* 404 Content */}
+      </div>
+      {/* Section Container */}
+    </div>
+    {/* Section Spacer */}
+  </section>
+  {/*...::: 404 Section End :::... */}
+</main>
 
 
     </>

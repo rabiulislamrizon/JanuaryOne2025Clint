@@ -9,6 +9,13 @@
 }
 
 
+.custom-header {
+  background-color: #30197F !important; /* Override Bootstrap's default color */
+  color: white; /* To ensure the text is visible */
+}
+
+
+
 /* Custom CSS for accordion */
 .accordion-item .accordion-header {
   cursor: pointer;

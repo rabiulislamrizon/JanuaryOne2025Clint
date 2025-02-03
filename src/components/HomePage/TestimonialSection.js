@@ -34,11 +34,7 @@ const TestimonialSection = () => {
 
           {/* Swiper Carousel */}
           <Swiper
-            spaceBetween={30} // Space between slides
-            slidesPerView={1} // Number of slides visible at a time
-            loop={true} // Enable looping
-            navigation={true} // Enable navigation (no need to import `Navigation`)
-            className="swiper-wrapper"
+           
           >
             {testimonial.map((a, index) => (
               <SwiperSlide key={index}>

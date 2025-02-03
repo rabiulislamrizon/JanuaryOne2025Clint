@@ -111,7 +111,7 @@ const Admin = () => {
                                     <div className='total-sales text-center mb-4 d-flex justify-content-center'>
                                         <h3>Total Sales: ${totalSalesAmount}</h3>
                                     </div>
-                                    <div className='d-flex justify-content-center'><Link className="jos button relative z-[1] inline-flex items-center gap-3 rounded-[50px] border-none bg-colorViolet py-[8px] text-white after:bg-colorOrangyRed hover:text-white" onClick={handleSignout}>Signout</Link></div>
+                                    {/* <div className='d-flex justify-content-center'><Link className="jos button relative z-[1] inline-flex items-center gap-3 rounded-[50px] border-none bg-colorViolet py-[8px] text-white after:bg-colorOrangyRed hover:text-white" onClick={handleSignout}>Signout</Link></div> */}
                                     <AdminMenu></AdminMenu>
                                 </div>
                             </div>

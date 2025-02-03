@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
 import { signOut } from "firebase/auth";
@@ -32,8 +32,16 @@ const NavBar = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  const navigate = useNavigate();
+
   const handleSignOut = () => {
-    signOut(auth);
+    signOut(auth)
+      .then(() => {
+        navigate('/'); // Navigate to the home page after successful sign-out
+      })
+      .catch((error) => {
+        console.error('Sign out error: ', error);
+      });
   };
 
   useEffect(() => {
@@ -107,8 +115,16 @@ const NavBar = () => {
                 <div className="mobile-menu-close">×</div>
               </div>
               <ul className="site-menu-main is-text-white">
+
+               
                 <li className="nav-item">
                   <a href="/" className="nav-link-item">Home</a>
+                </li>
+                <li className="nav-item">
+                  <a href="/home-one" className="nav-link-item">Home One</a>
+                </li>
+                <li className="nav-item">
+                  <a href="/home-two" className="nav-link-item">Home Two</a>
                 </li>
                 <li className="nav-item">
                   <a href="#services-sec" className="nav-link-item">Services</a>
@@ -265,6 +281,7 @@ const NavBar = () => {
                   </div>
                   <div className="offcanvas-body p-4">
                     <ul className="navbar-nav text-start">
+
                       <li className="nav-item shadow-sm border rounded mb-3">
                         <a
                           className="nav-link text-dark fw-semibold py-2 close-offcanvas"
@@ -288,6 +305,14 @@ const NavBar = () => {
                           href="#pricing-sec"
                         >
                           <i className="bi bi-currency-dollar me-2"></i> Pricing
+                        </a>
+                      </li>
+                      <li className="nav-item shadow-sm border rounded mb-3">
+                        <a
+                          className="nav-link text-dark fw-semibold py-2 close-offcanvas"
+                          href="/blog"
+                        >
+                          <i className="bi bi-currency-dollar me-2"></i> Blog
                         </a>
                       </li>
                       <li className="nav-item shadow-sm border rounded mb-3">

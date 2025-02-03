@@ -26,10 +26,10 @@ const PayNow = () => {
 
   return (
     <>
-          <HeaderBottom />
+      <HeaderBottom />
       <section id="services" className="services-area vh-100">
-      <MargingTop></MargingTop>
-    
+        <MargingTop></MargingTop>
+
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-lg-6 col-md-8">
@@ -75,7 +75,7 @@ const PayNow = () => {
                     <input
                       type="hidden"
                       name="return"
-                      value={`${currentDomain}/order-cancelled/${order._id}/${order.paymentId}`}
+                      value={`${currentDomain}/order-success/${order._id}/${order.paymentId}`}
                     />
                     <input type="hidden" name="cmd" value="_xclick" />
                     <button

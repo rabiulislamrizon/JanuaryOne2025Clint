@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
+import HeaderBottom from "../HomePage/HeaderBottom";
 
 const UpdateProfile = () => {
     const { id } = useParams();
@@ -69,47 +70,51 @@ const UpdateProfile = () => {
     };
 
     return (
+       <>
+
+       <HeaderBottom></HeaderBottom>
+       
         <div className="d-flex justify-content-center align-items-center vh-100">
-            <form className="form w-50 p-4 bg-light shadow" onSubmit={handleUpdateProfile}>
-                <h2 className="text-center mb-4">Update Profile</h2>
-                <div className="mb-3">
-                    <label htmlFor="userName" className="form-label">Your Name</label>
-                    <input
-                        type="text"
-                        id="userName"
-                        name="userName"
-                        defaultValue={profile.userName}
-                        placeholder="Enter your full name"
-                        className="form-control"
-                        required
-                    />
-                </div>
-                <div className="mb-3">
-                    <label htmlFor="profileImg" className="form-label">Upload Profile Image</label>
-                    <input
-                        type="file"
-                        id="profileImg"
-                        className="form-control"
-                        name="profileImg"
-                        accept="image/*"
-                        onChange={handleImageChange}
-                    />
-                    {previewImage && (
-                        <div className="mt-2">
-                            <img
-                                src={previewImage}
-                                alt="Preview"
-                                style={{ maxWidth: '100px', maxHeight: '100px' }}
-                                className="img-thumbnail"
-                            />
-                        </div>
-                    )}
-                </div>
-                <button type="submit" className="jos button relative z-[1] inline-flex items-center gap-3 rounded-[50px] border-none bg-colorViolet py-[8px] text-white after:bg-colorOrangyRed hover:text-white w-100">
-                    Update Account
-                </button>
-            </form>
-        </div>
+       <form className="form w-50 p-4 bg-light shadow" onSubmit={handleUpdateProfile}>
+           <h2 className="text-center mb-4">Update Profile</h2>
+           <div className="mb-3">
+               <label htmlFor="userName" className="form-label">Your Name</label>
+               <input
+                   type="text"
+                   id="userName"
+                   name="userName"
+                   defaultValue={profile.userName}
+                   placeholder="Enter your full name"
+                   className="form-control"
+                   required
+               />
+           </div>
+           <div className="mb-3">
+               <label htmlFor="profileImg" className="form-label">Upload Profile Image</label>
+               <input
+                   type="file"
+                   id="profileImg"
+                   className="form-control"
+                   name="profileImg"
+                   accept="image/*"
+                   onChange={handleImageChange}
+               />
+               {previewImage && (
+                   <div className="mt-2">
+                       <img
+                           src={previewImage}
+                           alt="Preview"
+                           style={{ maxWidth: '100px', maxHeight: '100px' }}
+                           className="img-thumbnail"
+                       />
+                   </div>
+               )}
+           </div>
+           <button type="submit" className="jos button relative z-[1] inline-flex items-center gap-3 rounded-[50px] border-none bg-colorViolet py-[8px] text-white after:bg-colorOrangyRed hover:text-white w-100">
+               Update Account
+           </button>
+       </form>
+   </div></>
     );
 };
 

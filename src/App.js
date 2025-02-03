@@ -143,6 +143,44 @@ import EditCategory from './Pages/AdminSection/EditCategory';
 import Category from './Pages/AdminSection/Category';
 import AuthorManagementPost from './Pages/AdminSection/AuthorManagementPost';
 import EditAuthor from './Pages/AdminSection/EditAuthor';
+import BannerOne from './components/BannerOne';
+import HomeOne from './Pages/HomeOne';
+import SettingOne from './Pages/AdminSection/SettingOne';
+import BannerSectionOne from './Pages/AdminSection/BannerSectionOne';
+import EditBannerOne from './Pages/AdminSection/EditBannerOne';
+import EditServicesSectionOne from './Pages/EditServicesSectionOne';
+import CategoryPosts from './Pages/CategoryPosts';
+import EditServicesOne from './Pages/AdminSection/EditServicesOne';
+import EditSErvicesitemsOne from './Pages/AdminSection/EditSErvicesitemsOne';
+import AboutSectionOne from './Pages/AdminSection/AboutSectionOne';
+import UpdateAbouSectionOne from './Pages/AdminSection/UpdateAbouSectionOne';
+import AddTestimonialone from './Pages/AdminSection/AddTestimonialone';
+import EditTestimonialOne from './Pages/AdminSection/EditTestimonialOne';
+import AddfaqOne from './Pages/AdminSection/AddfaqOne';
+import EditFaqItemOne from './Pages/AdminSection/EditFaqItemOne';
+import FAQSectionOne from './components/HomePage/FAQSectionOne';
+import EditFAQTextOne from './Pages/AdminSection/EditFAQTextOne';
+import VideoSectionOne from './Pages/AdminSection/VideoSectionOne';
+import UpdateVideoOne from './Pages/AdminSection/UpdateVideoOne';
+import OrderSuccess from './Pages/AdminSection/OrderSuccess';
+import SettingTwo from './Pages/AdminSection/SettingTwo';
+import HomeTwo from './Pages/HomeTwo';
+import BannerSectionTwo from './Pages/AdminSection/BannerSectionTwo';
+import EditBannerTwo from './Pages/AdminSection/EditBannerTwo';
+import AboutSectionTwo from './Pages/AdminSection/AboutSectionTwo';
+import VideoSectionTwo from './Pages/AdminSection/VideoSectionTwo';
+import UpdateVideoTwo from './Pages/AdminSection/UpdateVideoTwo';
+import AddTestimonialTwo from './Pages/AdminSection/AddTestimonialTwo';
+import EditTestimonialTwo from './Pages/AdminSection/EditTestimonialTwo';
+import AddfaqTwo from './Pages/AdminSection/AddfaqTwo';
+import FAQSectionTwo from './components/HomePage/FAQSectionTwo';
+import EditFaqItemTwo from './Pages/AdminSection/EditFaqItemTwo';
+import EditFAQTextTwo from './Pages/AdminSection/EditFAQTextTwo';
+import EditServicesSectionTwo from './Pages/EditServicesSectionTwo';
+import EditSErvicesitemsTwo from './Pages/AdminSection/EditSErvicesitemsTwo';
+import UpdateAbouSectionTwo from './Pages/AdminSection/UpdateAbouSectionTwo';
+import EditServicesTwo from './Pages/AdminSection/EditServicesTwo';
+import CategoryPage from './Pages/CategoryPage';
 
 
 
@@ -161,19 +199,8 @@ function App() {
 
         <Route path='/thanks' element={<ThanksPage></ThanksPage>}></Route>
         <Route path='/blog' element={<Blog></Blog>}></Route>
-        <Route path='/add-post' element={<AddPost></AddPost>}></Route>
-        <Route path='/add-author' element={<AuthorManagementPost></AuthorManagementPost>}></Route>
-        <Route path='/author/:id' element={<EditAuthor></EditAuthor>}></Route>
-        <Route path='/admin/add-category' element={<AddCategory></AddCategory>}></Route>
-        <Route path='/admin/category' element={<Category></Category>}></Route>
-        <Route path='/add-author' element={<AuthorManagementPost></AuthorManagementPost>}></Route>
-        <Route path='/edit-category/:categorySlug' element={<EditCategory></EditCategory>}></Route>
-        <Route path='/all-post' element={<AllPosts></AllPosts>}></Route>
-        <Route path='/blog/:titleSlug' element={<BlogPostDetails></BlogPostDetails>}></Route>
-        <Route path='/edit-post/:titleSlug' element={<EditPost></EditPost>}></Route>
         <Route path='/thanks-for-submit' element={<AuditThanks></AuditThanks>}></Route>
         <Route path='/' element={<Home></Home>}></Route>
-        <Route path='/real-estate-database' element={<RealEstateDatabse></RealEstateDatabse>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/login-general' element={<LoginGeneral></LoginGeneral>}></Route>
         <Route path='/reset' element={<ResetPassword></ResetPassword>}></Route>
@@ -181,13 +208,28 @@ function App() {
         <Route path='/register-general' element={<RegisterGeneral></RegisterGeneral>}></Route>
         <Route path='*' element={<ErrorPage></ErrorPage>}></Route>
         <Route path='/pricing/' element={<PricingPage></PricingPage>}></Route>
+        <Route path='/contact-us' element={<ContactUs></ContactUs>}></Route>
+       
+        <Route path='/category/:categorySlug' element={<CategoryPage></CategoryPage>}></Route>
+
+        <Route path='/add-post' element={<RequireAuth><AddPost></AddPost></RequireAuth>}></Route>
+        <Route path='/add-author' element={<RequireAuth><AuthorManagementPost></AuthorManagementPost></RequireAuth>}></Route>
+        <Route path='/author/:id' element={<RequireAuth><EditAuthor></EditAuthor></RequireAuth>}></Route>
+        <Route path='/admin/add-category' element={<RequireAuth><AddCategory></AddCategory></RequireAuth>}></Route>
+        <Route path='/admin/category' element={<RequireAuth><Category></Category></RequireAuth>}></Route>
+        <Route path='/add-author' element={<RequireAuth><AuthorManagementPost></AuthorManagementPost></RequireAuth>}></Route>
+        <Route path='/edit-category/:categorySlug' element={<RequireAuth><EditCategory></EditCategory></RequireAuth>}></Route>
+        <Route path='/all-post' element={<RequireAuth><AllPosts></AllPosts></RequireAuth>}></Route>
+        <Route path='/blog/:titleSlug' element={<BlogPostDetails></BlogPostDetails>}></Route>
+        <Route path='/edit-post/:titleSlug' element={<RequireAuth><EditPost></EditPost></RequireAuth>}></Route>
+        <Route path='/home-one' element={<HomeOne></HomeOne>}></Route>
+        <Route path='/home-two' element={<HomeTwo></HomeTwo>}></Route>
         <Route path='/update-profile/:id' element={<RequireAuth><UpdateProfile></UpdateProfile></RequireAuth>}></Route>
         <Route path='/order-now/:id' element={<OrderNow></OrderNow>}></Route>
         <Route path='/order-now-real/:id' element={<RequireAuth><OrderNowReal></OrderNowReal></RequireAuth>}></Route>
         <Route path='/my-order' element={<RequireAuth><MyOrder></MyOrder></RequireAuth>}></Route>
         <Route path='/pending-order' element={<RequireAuthPendingOrder><PendingOrder></PendingOrder></RequireAuthPendingOrder>}></Route>
         <Route path='/dashboard' element={<RequireAuth><UserDashboard></UserDashboard></RequireAuth>}></Route>
-        <Route path='/contact-us' element={<ContactUs></ContactUs>}></Route>
         <Route path='/add-user' element={<RequireAuth><AddUser></AddUser></RequireAuth>}></Route>
         <Route path='/add-subscribtion' element={<AddSubscribtion></AddSubscribtion>}></Route>
         <Route path='/message-now/:id' element={<RequireAuth><MessageNow></MessageNow></RequireAuth>}></Route>
@@ -212,15 +254,20 @@ function App() {
         <Route path='/admin' element={<RequireAuth><Admin></Admin></RequireAuth>}></Route>
         <Route path='/edit-faq' element={<RequireAuth><AddFAQs></AddFAQs></RequireAuth>}></Route>
         <Route path='/faqtext-edit/:id' element={<RequireAuth><FAQtextEdit></FAQtextEdit></RequireAuth>}></Route>
-        <Route path='/edit-faq-real' element={<RequireAuth><AddFAQReal></AddFAQReal></RequireAuth>}></Route>
-        <Route path='/faqtext-edit-real/:id' element={<RequireAuth><FAQeditReal></FAQeditReal></RequireAuth>}></Route>
+        <Route path='/edit-faq-one' element={<RequireAuth><AddfaqOne></AddfaqOne></RequireAuth>}></Route>
+        <Route path='/edit-faq-two' element={<RequireAuth><AddfaqTwo></AddfaqTwo></RequireAuth>}></Route>
+        <Route path='/text-faq-edit-one/:id' element={<RequireAuth><EditFAQTextOne></EditFAQTextOne></RequireAuth>}></Route>
+        <Route path='/text-faq-edit-two/:id' element={<RequireAuth><EditFAQTextTwo></EditFAQTextTwo></RequireAuth>}></Route>
         <Route path='faq-edit/:id' element={<RequireAuth><EditFAQitem></EditFAQitem></RequireAuth>}></Route>
-        <Route path='faq-edit-real/:id' element={<RequireAuth><EditFaqitemReal></EditFaqitemReal></RequireAuth>}></Route>
+        <Route path='faq-edit-one/:id' element={<RequireAuth><EditFaqItemOne></EditFaqItemOne></RequireAuth>}></Route>
+        <Route path='faq-edit-two/:id' element={<RequireAuth><EditFaqItemTwo></EditFaqItemTwo></RequireAuth>}></Route>
         <Route path='/admin/payment-status/:id' element={<RequireAuth><PaymentStatus></PaymentStatus></RequireAuth>}></Route>
         <Route path='/edit-banner' element={<RequireAuth><BannerSection></BannerSection></RequireAuth>}></Route>
-        <Route path='/edit-banner-realestate' element={<RequireAuth><BannerSectionRealestate></BannerSectionRealestate></RequireAuth>}></Route>
+        <Route path='/edit-banner-One' element={<RequireAuth><BannerSectionOne></BannerSectionOne></RequireAuth>}></Route>
+        <Route path='/edit-banner-two' element={<RequireAuth><BannerSectionTwo></BannerSectionTwo></RequireAuth>}></Route>
         <Route path='/banner/:id' element={<RequireAuth><UpdateBannerSection></UpdateBannerSection></RequireAuth>}></Route>
-        <Route path='/banner-real/:id' element={<RequireAuth><UpdateBannerReal></UpdateBannerReal></RequireAuth>}></Route>
+        <Route path='/banner-one/:id' element={<RequireAuth><EditBannerOne></EditBannerOne></RequireAuth>}></Route>
+        <Route path='/banner-two/:id' element={<RequireAuth><EditBannerTwo></EditBannerTwo></RequireAuth>}></Route>
         <Route path='/update-calltoaction' element={<RequireAuth><CallToActionSection></CallToActionSection></RequireAuth>}></Route>
         <Route path='/edit-work' element={<RequireAuth><WorkStep></WorkStep></RequireAuth>}></Route>
         <Route path='/edit-work/:id' element={<RequireAuth><EditWorkStep></EditWorkStep></RequireAuth>}></Route>
@@ -233,37 +280,48 @@ function App() {
         <Route path='/edit-logo/:id' element={<RequireAuth><EditLogo></EditLogo></RequireAuth>}></Route>
         <Route path='/edit-experience/:id' element={<RequireAuth><EditExperience></EditExperience></RequireAuth>}></Route>
         <Route path='/edit-about' element={<RequireAuth><AboutSection></AboutSection></RequireAuth>}></Route>
-        <Route path='/edit-about-real' element={<RequireAuth><AboutSectionReal></AboutSectionReal></RequireAuth>}></Route>
+        <Route path='/edit-about-two' element={<RequireAuth><AboutSectionTwo></AboutSectionTwo></RequireAuth>}></Route>
+        <Route path='/edit-about-one' element={<RequireAuth><AboutSectionOne></AboutSectionOne></RequireAuth>}></Route>
         <Route path='/about/:id' element={<RequireAuth><UpdateAboutSection></UpdateAboutSection></RequireAuth>}></Route>
-        <Route path='/about-real/:id' element={<RequireAuth><UpdateAboutReal></UpdateAboutReal></RequireAuth>}></Route>
+        <Route path='/about-one/:id' element={<RequireAuth><UpdateAbouSectionOne></UpdateAbouSectionOne></RequireAuth>}></Route>
+        <Route path='/about-two/:id' element={<RequireAuth><UpdateAbouSectionTwo></UpdateAbouSectionTwo></RequireAuth>}></Route>
         <Route path='/edit-video' element={<RequireAuth><VideoSection></VideoSection></RequireAuth>}></Route>
-        <Route path='/edit-video-real' element={<RequireAuth><VideoSectionReal></VideoSectionReal></RequireAuth>}></Route>
+        <Route path='/edit-video-one' element={<RequireAuth><VideoSectionOne></VideoSectionOne></RequireAuth>}></Route>
+        <Route path='/edit-video-two' element={<RequireAuth><VideoSectionTwo></VideoSectionTwo></RequireAuth>}></Route>
         <Route path='/video/:id' element={<RequireAuth><UpdateVideoSection></UpdateVideoSection></RequireAuth>}></Route>
+        <Route path='/video-one/:id' element={<RequireAuth><UpdateVideoOne></UpdateVideoOne></RequireAuth>}></Route>
+        <Route path='/video-two/:id' element={<RequireAuth><UpdateVideoTwo></UpdateVideoTwo></RequireAuth>}></Route>
         <Route path='/videotext-edit-real/:id' element={<RequireAuth><EditVideoTextReal></EditVideoTextReal></RequireAuth>}></Route>
         <Route path='/main-service-edit/:id' element={<RequireAuth><EditMainService></EditMainService></RequireAuth>}></Route>
         <Route path='/servicetext-edit/:id' element={<RequireAuth><EditServicestext></EditServicestext></RequireAuth>}></Route>
+        <Route path='/servicetext-edit-one/:id' element={<RequireAuth><EditServicesOne></EditServicesOne></RequireAuth>}></Route>
+        <Route path='/servicetext-edit-two/:id' element={<RequireAuth><EditServicesTwo></EditServicesTwo></RequireAuth>}></Route>
         <Route path='/edit-service' element={<RequireAuth><ServicesSection></ServicesSection></RequireAuth>}></Route>
         <Route path='/service-edit/:id' element={<RequireAuth><EditService></EditService></RequireAuth>}></Route>
-        <Route path='/edit-service-real-estate' element={<RequireAuth><RealEstateServiceSection></RealEstateServiceSection></RequireAuth>}></Route>
-        <Route path='/real-estate-service-edit/:id' element={<RequireAuth><EditServiceRealEstate></EditServiceRealEstate></RequireAuth>}></Route>
+        <Route path='/edit-service-one' element={<RequireAuth><EditServicesSectionOne></EditServicesSectionOne></RequireAuth>}></Route>
+        <Route path='/edit-service-two' element={<RequireAuth><EditServicesSectionTwo></EditServicesSectionTwo></RequireAuth>}></Route>
+        <Route path='/service-edit-one/:id' element={<RequireAuth><EditSErvicesitemsOne></EditSErvicesitemsOne></RequireAuth>}></Route>
+        <Route path='/service-edit-two/:id' element={<RequireAuth><EditSErvicesitemsTwo></EditSErvicesitemsTwo></RequireAuth>}></Route>
         <Route path='/step-section' element={<RequireAuth><StepSection></StepSection></RequireAuth>}></Route>
         <Route path='/edit-step/:id' element={<RequireAuth><EditStep></EditStep></RequireAuth>}></Route>
         <Route path='/total-orders' element={<RequireAuth><TotalOrders></TotalOrders></RequireAuth>}></Route>
         <Route path='/add-item' element={<RequireAuth><AddItem></AddItem></RequireAuth>}></Route>
         <Route path='/setting' element={<RequireAuth><Setting></Setting></RequireAuth>}></Route>
-        <Route path='/setting-ecommerce' element={<RequireAuth><SettingeCommerce></SettingeCommerce></RequireAuth>}></Route>
-        <Route path='/setting-realestate' element={<RequireAuth><RealestateSetting></RealestateSetting></RequireAuth>}></Route>
+        <Route path='/setting-one' element={<RequireAuth><SettingOne></SettingOne></RequireAuth>}></Route>
+        <Route path='/setting-two' element={<RequireAuth><SettingTwo></SettingTwo></RequireAuth>}></Route>
         <Route path='/add-pricing/' element={<RequireAuth><Pricing></Pricing></RequireAuth>}></Route>
         <Route path='/add-pricing-real/' element={<RequireAuth><PricingReal></PricingReal></RequireAuth>}></Route>
         <Route path='/package-edit/:id' element={<RequireAuth><EditPricing></EditPricing></RequireAuth>}></Route>
         <Route path='/package-edit-real/:id' element={<RequireAuth><EditPricingReal></EditPricingReal></RequireAuth>}></Route>
         <Route path='/service/' element={<ServicePage></ServicePage>}></Route>
         <Route path='/edit-testimonial/' element={<RequireAuth><AddTestimonial></AddTestimonial></RequireAuth>}></Route>
-        <Route path='/edit-testimonial-real/' element={<RequireAuth><AddTestimonialReal></AddTestimonialReal></RequireAuth>}></Route>
+        <Route path='/edit-testimonial-one/' element={<RequireAuth><AddTestimonialone></AddTestimonialone></RequireAuth>}></Route>
+        <Route path='/edit-testimonial-two/' element={<RequireAuth><AddTestimonialTwo></AddTestimonialTwo></RequireAuth>}></Route>
         <Route path='/testimonialtext-edit/:id' element={<RequireAuth><EditTestimonialtext></EditTestimonialtext></RequireAuth>}></Route>
         <Route path='/testimonialtext-edit-real/:id' element={<RequireAuth><EditTestimonialTextReal></EditTestimonialTextReal></RequireAuth>}></Route>
         <Route path='/edit-testimonial/:id/' element={<RequireAuth><EditTestimonial></EditTestimonial></RequireAuth>}></Route>
-        <Route path='/edit-testimonial-real/:id/' element={<RequireAuth><EditTestimonialitemReal></EditTestimonialitemReal></RequireAuth>}></Route>
+        <Route path='/edit-testimonial-one/:id/' element={<RequireAuth><EditTestimonialOne></EditTestimonialOne></RequireAuth>}></Route>
+        <Route path='/edit-testimonial-two/:id/' element={<RequireAuth><EditTestimonialTwo></EditTestimonialTwo></RequireAuth>}></Route>
         <Route path='/edit-services-features/' element={<RequireAuth><FeaturesServicesAdd></FeaturesServicesAdd></RequireAuth>}></Route>
         <Route path='/edit-team-text/' element={<RequireAuth><AddTeamMembers></AddTeamMembers></RequireAuth>}></Route>
         <Route path='/edit-experience/' element={<RequireAuth><AddExperience></AddExperience></RequireAuth>}></Route>
@@ -291,18 +349,19 @@ function App() {
         <Route path='/pay-now/:id' element={<RequireAuth><PayNow></PayNow></RequireAuth>}></Route>
         <Route path='/add-paypal-Email' element={<AddPaypalEmail></AddPaypalEmail>}></Route>
         <Route path='/order-cancelled/:id' element={<RequireAuth><CancelledPayment></CancelledPayment></RequireAuth>}></Route>
+        <Route path='/order-success/:id' element={<RequireAuth><OrderSuccess></OrderSuccess></RequireAuth>}></Route>
         <Route path='oderchat' element={<OrderChart></OrderChart>}></Route>
 
-      
 
-       
+
+
       </Routes>
 
-      
-    
+
+
 
       <ScrollToTopButton></ScrollToTopButton>
-  
+
       <Footer></Footer>
     </div>
   );

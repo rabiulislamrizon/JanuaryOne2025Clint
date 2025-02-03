@@ -127,9 +127,9 @@ const Footer = () => {
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 ">
                       {/* About Company Section */}
                       <div className="flex flex-col gap-y-6 ">
-                        <h4 className="text-[21px] font-semibold capitalize text-white">
+                        {/* <h4 className="text-[21px] font-semibold capitalize text-white">
                           About Company
-                        </h4>
+                        </h4> */}
                         <div>
                           {
                             logo.map(l => <a href="/">
